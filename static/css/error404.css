@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    font-family: 'muli', sans-serif;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+    background-blend-mode: multiply,multiply;
+}
+h1{
+    margin: 0;
+    font-size: 60px;
+}
+p{
+    font-size: 20px;
+}
+.erro{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+.error{
+    text-align: center;
+    color: #fff;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    width: 100%;
+}
+.footer a{
+    color: #fff;
+    cursor:pointer;
+    font-size: 14px;
+    padding-left: 40px;
+    text-decoration: none;
+}
+.footer a :hover{
+    text-decoration: underline;
+}
+
+
+

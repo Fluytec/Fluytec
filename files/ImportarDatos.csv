@@ -1,0 +1,4 @@
+id_usuarios;nombre;apellido;identificacion;telefono;edad;fec_nacimiento;correo;clave
+1007;Juan;Lopez;1232112;32132132;12;2001-12-14;Juan1@gmail.com;juan12
+1008;David;Diaz;12323112;3123213;21;2001-09-21;Davidd@gmail.com;diaz132
+1009;Jose;Vega;31231231;31231231;41;1980-09-23;Josev@gmail.com;jose4431
