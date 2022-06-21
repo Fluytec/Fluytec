@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Calendar</title>
+
+        <link th:href="@{\css/bootstrap.min.css}" rel="stylesheet" media="screen">
+        <link th:href="@{\css/fullcalendar.css}" rel="stylesheet" media="screen">
+        <link th:href="@{\css/styles.css}" rel="stylesheet" media="screen">
+        <link rel="stylesheet" th:href="@{\css/index-dashboard_1.css}">
+
+        <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="">
+                <div class="navbar container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#"><i class="icon-user"></i> Vendededor</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li >
+                                <a th:href="@{\login}" role="button" > Salir </a>                                                               
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li class="">
+                                <a href="#">Dashboard</a>
+                            </li>
+                          
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3" id="sidebar">
+                    <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+                        <li class="">
+                            <a th:href="@{/index-ventas}"><i class="icon-chevron-right"></i> Ventas</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/calendar-ventas}"><i class="icon-chevron-right"></i> Calendario</a>
+                        </li>
+                        <!--  <li>
+                            <a ><i class="icon-chevron-right"></i>Graficos</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/form-ventas}"><i class="icon-chevron-right"></i> Formularios</a>
+                        </li>-->
+                        <li>
+                            <a th:href="@{/tables-ventas}"><i class="icon-chevron-right"></i> Productos</a>
+                        </li>
+
+                        <li>
+                            <a th:href="@{/editors-ventas}"><i class="icon-chevron-right"></i> Observaciones y recordatorio</a>
+                        </li>
+
+                    </ul>
+                </div>
+                
+              
+                <div class="span9" id="content">
+                    <div class="row-fluid">
+                        
+                    </div>
+
+                <div class="span9" id="content">
+                    <div class="row-fluid">
+             
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Calendario</div>
+                                <div class="pull-right"><span class="badge badge-warning"></span>
+
+                                </div>
+                            </div>
+                           
+                                </div>
+                                <div class="span10">
+                                    <div id='calendar'></div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; 2021 Derehos reservados <br>
+                    Desarrollado por Daniel Vargas y Nicolas Vega</p>
+            </footer>
+        </div>
+        <style>
+        #external-events {
+            float: left;
+            width: 150px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            background: #eee;
+            text-align: left;
+            }
+            
+        #external-events h4 {
+            font-size: 16px;
+            margin-top: 0;
+            padding-top: 1em;
+            }
+            
+        .external-event { 
+            margin: 10px 0;
+            padding: 2px 4px;
+            background: #3366CC;
+            color: #fff;
+            font-size: .85em;
+            cursor: pointer;
+            z-index: 99999999;
+            }
+            
+        #external-events p {
+            margin: 1.5em 0;
+            font-size: 11px;
+            color: #666;
+            }
+            
+        #external-events p input {
+            margin: 0;
+            vertical-align: middle;
+            }
+
+        </style>
+   
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="vjs/jquery-ui-1.10.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fullcalendar.js"></script>
+        <script src="js/gcal.js"></script>
+        <script src="js/scripts.js"></script>
+        <script>
+        $(function() {
+           
+            var calendar = $('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end, allDay) {
+                var title = prompt('Event Title:');
+                if (title) {
+                    calendar.fullCalendar('renderEvent',
+                        {
+                            title: title,
+                            start: start,
+                            end: end,
+                            allDay: allDay
+                        },
+                        true 
+                    );
+                }
+                calendar.fullCalendar('unselect');
+            },
+            droppable: true, 
+            drop: function(date, allDay) {
+            
+               
+                var originalEventObject = $(this).data('eventObject');
+                
+                
+                var copiedEventObject = $.extend({}, originalEventObject);
+                
+               
+                copiedEventObject.start = date;
+                copiedEventObject.allDay = allDay;
+                
+               
+                $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+                
+               
+                if ($('#drop-remove').is(':checked')) {
+                   
+                    $(this).remove();
+                }
+                
+            },
+			editable: true,
+			
+			events: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic'
+			
+			});
+        });
+
+        $('#external-events div.external-event').each(function() {
+        
+           
+            var eventObject = {
+                title: $.trim($(this).text()) 
+            };
+            
+           
+            $(this).data('eventObject', eventObject);
+            
+          
+            $(this).draggable({
+                zIndex: 999999999,
+                revert: true,     
+                revertDuration: 0  
+            });
+            
+        });
+        </script>
+    </body>
+
+</html>

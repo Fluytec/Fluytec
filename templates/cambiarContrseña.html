@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Ingresar</title>
+        <link rel="stylesheet" th:href="@{../CSS/index-login-2.css}"/>
+        <!-- <script src="js/login.js"></script> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <form name="login" th:action="@{/enviaremail}" method="POST"> 
+                    <table width="350" border="0"> 
+                        <tr> 
+                        <h2>Ingrese su correo</h2>
+
+                        </tr> 
+                        <tr> 
+                            <td><span class="cnt"> 
+                                    <input name="email" type="email" class="Input" value="" size="20" placeholder="Ingrese su correo" required /> 
+                                </span></td> <br></td></tr>
+
+                        <th><span class="cnt"> 
+                                <button class="btn btn-primary btn-large" type="submit" style="background-color:rgba(126, 183, 216)";>Enviar</button></span></td> 
+                            </tr>  
+                    </table> 
+
+                    <center> <p style="">Volver
+                            <a th:href="index">
+                                Click Aquí
+                            </a>
+                        </p></center>
+                </form>
+                <!--Register-->
+                <form action="" class="formulario__register">
+
+                </form>
+            </div>
+    </body>
+</html>

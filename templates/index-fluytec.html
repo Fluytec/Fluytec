@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{\css/booststrap-index.css}">
+        <link rel="stylesheet" th:href="@{\css/index-fluytec.css}">
+        <title>Fluytec SAS</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default navbar-1">
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <img src="../IMG/logo1.jpg" alt="" width="15%" height="auto">
+                        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar1">
+                            <span class="sr-only">alternar menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand">Fluytec sas </a>
+                    </div>
+
+                    <div class="collapsed navbar-collapsed" id="navbar1">
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="#">Inicio</a></li>
+                            <li><a href="#Portafolio">Portafoilio</a></li>
+                            <li><a href="#Quienes somos">Quienes somos</a></li>
+                            <li><a href="#Contactenos">Contactenos</a></li>
+
+                            <li class="dropdown">
+                                <a th:href="@{\login}" > Ingresar </a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <header class="borde ">
+                <p class="t-imagen ">FLUYTEC SAS</p>
+            </header>
+            <div id="Portafolio" class="titulo ">
+                <h1>Portafolio de servicios</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="../IMG/mangueras-hidraulicas.jpg" alt="" height="">
+                        <div class="caption">
+                            <h3>Mangueras Hidraulicas</h3>
+                            <p>Fabricadas en caucho sintético y de gran resistencia, son necesarias en la mayoría de sistemas hidráulicos, ya que se pueden usar en espacios limitados y admiten movimiento, a la vez que transmiten la potencia necesaria para llevar a cabo un trabajo mecánico.</p>
+                            <p><a href="../html/Error500.html" class="btn btn-success" role="button">ver mas..</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="../IMG/manguera.jpg"  alt="">
+                        <div class="caption">
+                            <h3>Mangueras Sencillas</h3>
+                            <p>Se utilizan diferentes tamaños y configuraciones de la manguera trenzada en el hogar, en las plantas de fabricación y en los sistemas de servicios públicos municipales. Esencialmente, la manguera se puede utilizar para mover líquidos y gases desde un punto de origen a un destino de manera segura y eficiente.</p>
+                            <p><a href="../html/Error500.html" class="btn btn-success" role="button">ver mas..</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="../IMG/acoples.jpg" alt="">
+                        <div class="caption">
+                            <h3>Acoples</h3>
+                            <p>Es un conjunto bomba-turbina con un fluido de trabajo entre ambos que transmiten energía de un eje de potencia a un eje de carga a través de dicho fluido   </p>
+                            <p><a href="../html/Error500.html" class="btn btn-success" role="button">ver mas..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 id="Quienes somos" class="titulo2">Quienes somos</h1>
+            </div>
+            <div class="row quienes_somos">
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="../IMG/quienes somos.jpg" alt="..." width="250">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <br>
+                        <h4 class="media-heading">Visión</h4>
+                        <br><br>
+                        <p>Fluytec SAS es una empresa comercializadora de todo tipo de mangueras y acoples en todo el territorio nacional.</p>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object" src="../IMG/quienes somos2.jpg" alt="..." width="250">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <br>
+                        <h4 class="media-heading">Misión</h4>
+                        <br></br>
+                        <p>Desde mangueras y acoples para uso doméstico y agrícola hasta mangueras y acoples para unos  usos más complejos como uso industrial.</p>
+                    </div>
+                </div>
+            </div>  
+            <div>
+                <h1 id="Contactenos" class="titulo2">contactenos</h1>
+            </div>
+
+            <section class="contactenos " >
+                <div class="borde div-contacto   ">
+                    <p class="text-center"><strong>Contacta Con Nosotros</strong></p>
+                    <form action="#">
+                        <label for="Nombre"><strong>Nombre</strong></label>
+                        <input type="text" class="form-control" placeholder="Ingrese su Nombre" id="Nombre">
+                        <label for="Apellido"><strong>Apellido</strong></label>
+                        <input type="text" class="form-control" placeholder="Ingrese su Apellido" id="Apellido">
+                        <label for="Correo"><strong>Correo</strong></label>
+                        <input type="mail" class="form-control" placeholder="Ingrese su Correo" id="Correo">
+                    </form>
+                    <label for="Asunto"><strong>Asunto</strong></label>
+                    <input type="text" class="form-control" placeholder="Ingrese su Asunto" id="Asunto">
+                    <div class="mb-3">
+                        <label for="ExampleFormControlTextarea1" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="ExampleFormControlTextarea1"  rows="5"></textarea>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <a href="../html/Error500.html"> <button type="submit" class="btn btn-danger">Enviar</button></a>
+                    </div>
+                </div>
+
+                <div class="borde div-contacto">
+
+                    <div class="borde div-arriba ">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.779144749159!2d-74.1124969857369!3d4.633450043528384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9be4916b310f%3A0xbbcbe5f673b67f42!2sCra.%2059%20%2315-59%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1624327777905!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <br>
+
+                    <div class="borde div-abajo">
+                        <p>direccion: CRA 59 n 15 59</p>
+                        <p>telefono: 4137270</p>
+                        <p>ww.fluytec.com</p>
+                        <p>Bogota</p>  
+                        <br>
+                        <img class="icono" src="../IMG/facebook.png" width="3%">
+                        <img class="icono" src="../IMG/instagram.jpg" width="3%">
+                        <img class="icono" src="../IMG/twitter.jpg" width="3%">
+                    </div>
+                </div>
+            </section>
+            <br><br><br><br><br>
+            <footer class="borde footer">
+                <p>&copy; 2021 Derehos reservados <br>
+                    Desarrollado por Daniel Vargas y Nicolas Vega </p> 
+
+            </footer>
+        </div>
+        <script th:src="@{https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js}" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+        <script th:src="@{../js/jquery.js}"></script>
+        <script th:src="@{../js/bootstrap.min.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Ingresar</title>
+        <link rel="stylesheet" th:href="@{../CSS/index-login-2.css}"/>
+        <!-- <script src="js/login.js"></script> -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <h2>Ingresar</h2>
+                <form id="form_id" method="POST" name="myform" th:action="@{/login}" th:object="${usuario}">
+                    <label>Usuario</label>
+                    <input type="text" name="username" id="username" th:field="*{id_usuarios}" requiered/>
+                    <label>Contraseña</label>
+                    <input type="password" name="password" id="password" th:field="*{clave}" requiered/>
+                    <input class="btn btn-danger" type="submit" value="Ingresar" /><br><br>
+                    <button class="btn btn-danger" type="reset" id="submit">cancelar</button>
+                </form><br>
+                
+                <li>
+                <a th:href="@{/}">Volver al inicio</a>
+                <a th:href="@{/cambiarContrseña}">Recuperar Contraseña</a>
+                </li>
+            </div>
+        </div>
+       <!-- <script src="../JS/js/login.js"></script> -->
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recuperar contraseña</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="icon" href="../img/logo2.png">
+        <link rel="stylesheet" href="../css/estilocont.css">
+        <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    </head>
+    <body>
+
+        <main>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <br>
+                        <h3>Cambiar Contraseña</h3>
+                        <p>Ingrese la nueva contraseña que desea renovar</p>
+                    </div>
+
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form  id="form1" th:action="@{/ModificarContraseña}" method="post" 
+                           modelAttribute="identificaion" class="needs-validation" novalidate onsubmit="return validacion();"> 
+                        <table width="350" border="0"> 
+                            <tr> 
+                            <h2>Recuperar Contraseña</h2>
+
+                            </tr> 
+                            <tr> 
+                                <td><span class="cnt"> 
+                                        <input id="contrasena_usuario" name="contrasena_usuario" type="password" class="form-control"  size="20" placeholder="Ingrese nueva contraseña" required >
+                                        <input id="codUsuario" name="identificaion" type="hidden" class="form-control"  value="${identificaion}"  >
+                                    </span></td> 
+                            <tr><td><br></td></tr>
+
+                            <th><span class="cnt"> 
+                                    <button class="btn btn-primary btn-large" type="submit" style="background-color:rgba(126, 183, 216)";>Actualizar</button></span></td> 
+                                </span></td> 
+                                </tr>  
+                        </table> 
+                        <br>
+                        <p>Ingresa a tu cuenta
+                            <a th:href="index">
+                                Click Aquí
+                            </a>
+                        </p>
+                    </form>
+                    <!--Register-->
+                    <form action="" class="formulario__register">
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+        <script src="../js/script.js"></script>
+
+    </body>
+</html>

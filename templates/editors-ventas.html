@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Observaciones y recordatorios</title>        
+        <link th:href="@{\css/bootstrap-wysihtml5.css}" rel="stylesheet" type="text/css" ></link>
+        <link th:href="@{\css/bootstrap.min.css}" rel="stylesheet" media="screen">
+        <link th:href="@{\css/styles.css}" rel="stylesheet" media="screen">
+        <link rel="stylesheet" th:href="@{\css/index-dashboard_1.css}">   
+        <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar">
+                <div class="navbar container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#"><i class="icon-user"></i> Vendededor</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li >
+                                <a th:href="@{\login}" role="button" > Salir </a>                                                               
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li class="">
+                                <a href="#">Dashboard</a>
+                            </li>
+
+                        </ul>
+                        </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3" id="sidebar">
+                    <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+                        <li class="">
+                            <a th:href="@{/index-ventas}"><i class="icon-chevron-right"></i> Ventas</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/calendar-ventas}"><i class="icon-chevron-right"></i> Calendario</a>
+                        </li>
+                        <!--  <li>
+                            <a ><i class="icon-chevron-right"></i>Graficos</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/form-ventas}"><i class="icon-chevron-right"></i> Formularios</a>
+                        </li>-->
+                        <li>
+                            <a th:href="@{/tables-ventas}"><i class="icon-chevron-right"></i> Productos</a>
+                        </li>
+
+                        <li>
+                            <a th:href="@{/editors-ventas}"><i class="icon-chevron-right"></i> Observaciones y recordatorio</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="span9" id="content">
+                    <div class="row-fluid">
+
+                    </div>
+
+
+                    <div class="span10">
+                        <div class="row-fluid">
+
+
+                            <div class="span12" id="content">
+                                <div class="row-fluid">
+
+                                    <div class="block">
+                                        <div class="navbar navbar-inner block-header">
+                                            <div class="muted pull-left">Observaciones</div>
+                                        </div>
+                                        <div class="block-content collapse in">
+                                            <textarea id="ckeditor_standard"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; 2021 Derehos reservados <br>
+                Desarrollado por Daniel Vargas y Nicolas Vega</p>
+        </footer>
+    </div>
+
+
+    <script src="vendors/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>
+    <script src="vendors/jquery-1.9.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js"></script>
+
+    <script src="vendors/ckeditor/ckeditor.js"></script>
+    <script src="vendors/ckeditor/adapters/jquery.js"></script>
+
+    <script type="text/javascript" src="vendors/tinymce/js/tinymce/tinymce.min.js"></script>
+
+    <script src="assets/scripts.js"></script>
+    <script>
+        $(function () {
+
+            $('#bootstrap-editor').wysihtml5();
+
+
+            $('textarea#ckeditor_standard').ckeditor({width: '98%', height: '150px', toolbar: [
+                    {name: 'document', items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']},
+                    ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+                    {name: 'basicstyles', items: ['Bold', 'Italic']}
+                ]});
+            $('textarea#ckeditor_full').ckeditor({width: '98%', height: '150px'});
+        });
+
+
+        tinymce.init({
+            selector: "#tinymce_basic",
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+
+
+        tinymce.init({
+            selector: "#tinymce_full",
+            plugins: [
+                "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                "searchreplace wordcount visualblocks visualchars code fullscreen",
+                "insertdatetime media nonbreaking save table contextmenu directionality",
+                "emoticons template paste textcolor"
+            ],
+            toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            toolbar2: "print preview media | forecolor backcolor emoticons",
+            image_advtab: true,
+            templates: [
+                {title: 'Test template 1', content: 'Test 1'},
+                {title: 'Test template 2', content: 'Test 2'}
+            ]
+        });
+
+    </script>
+</body>
+
+</html>
